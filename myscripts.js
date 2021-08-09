@@ -53,3 +53,24 @@ function newElement() {
 		}
 	}
 }
+
+
+function setCookie(cname,cvalue) {
+  localStorage.setItem(cname, cvalue);
+}
+
+function getCookie(cname) {
+  return localStorage.getItem(cname);
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "" && user != null) {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user);
+     }
+  }
+}
